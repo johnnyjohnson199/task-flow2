@@ -1,20 +1,63 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# TaskFlow
 
-# Run and deploy your AI Studio app
+A comprehensive project management tool featuring Graph, List, and Timeline views, built with React and Golang.
 
-This contains everything you need to run your app locally.
+## Prerequisites
 
-View your app in AI Studio: https://ai.studio/apps/drive/1AjhcD3ZflHYAKUbBSdjdqbq-zUjHumt0
+- **Go**: Version 1.21 or higher.
+- **Node.js**: Version 18 or higher (for the frontend environment).
 
-## Run Locally
+## Getting Started
 
-**Prerequisites:**  Node.js
+To run the application, you need to start both the backend server and the frontend client concurrently.
 
+### 1. Backend (Golang)
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+The backend serves the API at `http://localhost:8080`.
+
+1. Open a terminal and navigate to the `backend` directory:
+   ```bash
+   cd backend
+   ```
+
+2. Initialize the module (if not already done) and tidy dependencies:
+   ```bash
+   go mod tidy
+   ```
+
+3. Start the server:
+   ```bash
+   go run main.go
+   ```
+
+You should see a message indicating the server is running on port 8080.
+
+### 2. Frontend (React)
+
+The frontend is a React application that connects to the Go backend.
+
+1. Open a new terminal window (keep the backend running) and navigate to the project root.
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+   *(Or `npm start` depending on your setup)*
+
+4. Open your browser and navigate to the URL shown in the terminal (usually `http://localhost:5173` or `http://localhost:3000`).
+
+## Architecture
+
+- **Frontend**: React, TypeScript, Tailwind CSS. Handles the UI and visualization (Graph, List, Timeline).
+- **Backend**: Golang. Provides a REST API for Tasks, Users, and Notifications. Stores data in-memory for this demo.
+
+## Configuration
+
+The frontend API connection is configured in `services/api.ts`.
+- `USE_MOCK_API`: Set to `false` to connect to the Go backend.
+- `API_BASE_URL`: Defaults to `http://localhost:8080/api/v1`.

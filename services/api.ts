@@ -2,8 +2,8 @@ import { Task, User, Notification } from '../types';
 import { TASKS, CURRENT_USER, NOTIFICATIONS } from './mockData';
 
 // Configuration
-const USE_MOCK_API = true; // Set to false when connecting to real Golang backend
-const API_BASE_URL = 'http://localhost:8080/api/v1'; // Example Go server URL
+const USE_MOCK_API = false; // Connected to Go Backend
+const API_BASE_URL = 'http://localhost:8080/api/v1'; // Local Go server
 
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
