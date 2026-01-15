@@ -1,63 +1,63 @@
 # TaskFlow
 
-A comprehensive project management tool featuring Graph, List, and Timeline views, built with React and Golang.
+Комплексный инструмент для управления проектами с возможностями просмотра в виде графа, списка и временной шкалы, созданный с использованием React и Golang.
 
-## Prerequisites
+## Предварительные требования (Prerequisites)
 
-- **Go**: Version 1.21 or higher.
-- **Node.js**: Version 18 or higher (for the frontend environment).
+- **Go**: Версия 1.21 или выше.
+- **Node.js**: Версия 18 или выше (для окружения фронтенда).
 
-## Getting Started
+## Начало работы (Getting Started)
 
-To run the application, you need to start both the backend server and the frontend client concurrently.
+Для запуска приложения необходимо одновременно запустить сервер бэкенда и клиент фронтенда.
 
-### 1. Backend (Golang)
+### 1. Бэкенд (Golang)
 
-The backend serves the API at `http://localhost:8080`.
+Бэкенд обслуживает API по адресу `http://localhost:8080`.
 
-1. Open a terminal and navigate to the `backend` directory:
+1. Откройте терминал и перейдите в директорию `backend`:
    ```bash
    cd backend
    ```
 
-2. Initialize the module (if not already done) and tidy dependencies:
+2. Инициализируйте модуль (если это еще не сделано) и приведите зависимости в порядок:
    ```bash
    go mod tidy
    ```
 
-3. Start the server:
+3. Запустите сервер:
    ```bash
    go run main.go
    ```
 
-You should see a message indicating the server is running on port 8080.
+Вы должны увидеть сообщение о том, что сервер запущен на порту 8080.
 
-### 2. Frontend (React)
+### 2. Фронтенд (React)
 
-The frontend is a React application that connects to the Go backend.
+Фронтенд представляет собой React-приложение, которое подключается к Go-бэкенду.
 
-1. Open a new terminal window (keep the backend running) and navigate to the project root.
+1. Откройте новое окно терминала (не останавливая работу бэкенда) и перейдите в корневую директорию проекта.
 
-2. Install dependencies:
+2. Установите зависимости:
    ```bash
    npm install
    ```
 
-3. Start the development server:
+3. Запустите сервер разработки:
    ```bash
    npm run dev
    ```
-   *(Or `npm start` depending on your setup)*
+   *(Или `npm start`, в зависимости от ваших настроек)*
 
-4. Open your browser and navigate to the URL shown in the terminal (usually `http://localhost:5173` or `http://localhost:3000`).
+4. Откройте браузер и перейдите по URL-адресу, указанному в терминале (обычно `http://localhost:5173` или `http://localhost:3000`).
 
-## Architecture
+## Архитектура
 
-- **Frontend**: React, TypeScript, Tailwind CSS. Handles the UI and visualization (Graph, List, Timeline).
-- **Backend**: Golang. Provides a REST API for Tasks, Users, and Notifications. Stores data in-memory for this demo.
+- **Фронтенд**: React, TypeScript, Tailwind CSS. Отвечает за пользовательский интерфейс и визуализацию (Граф, Список, Временная шкала).
+- **Бэкенд**: Golang. Предоставляет REST API для задач, пользователей и уведомлений. В данной демо-версии данные хранятся в оперативной памяти.
 
-## Configuration
+## Конфигурация
 
-The frontend API connection is configured in `services/api.ts`.
-- `USE_MOCK_API`: Set to `false` to connect to the Go backend.
-- `API_BASE_URL`: Defaults to `http://localhost:8080/api/v1`.
+Подключение фронтенда к API настраивается в файле `services/api.ts`.
+- `USE_MOCK_API`: Установите значение `false`, чтобы подключиться к Go-бэкенду.
+- `API_BASE_URL`: По умолчанию `http://localhost:8080/api/v1`.
